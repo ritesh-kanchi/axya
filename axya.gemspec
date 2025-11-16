@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.name          = "axya"
   spec.version       = "0.0.1"
   spec.authors       = ["Ritesh Kanchi"]
-  spec.email         = ["ritesh.kanchi@gmail.com"]
+  spec.email         = ["rkanchi@g.harvard.edu"]
 
   spec.summary       = "Axya is a Jekyll theme that helps researchers quickly publish accessible, clean, and modern companion sites for their papers, posters, and projects."
   spec.homepage      = "https://github.com/ritesh-kanchi/axya"
