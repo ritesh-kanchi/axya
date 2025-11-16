@@ -92,7 +92,7 @@ theme: accessible-research-theme
 
 The theme currently provides these layouts:
 
-- `default` — base layout with header and footer
+- `base` — base layout with header and footer
 - `home` — homepage with hero section and automatic page grid
 - `page` — simple general‑purpose page layout
 
