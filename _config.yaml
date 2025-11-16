@@ -25,9 +25,3 @@ content:
       url: https://doi.org/10.1145/XXXXXXX.XXXXXXX
 
 permalink: pretty
-
-plugins:
-  - jekyll-postcss
-
-postcss:
-  cache: false
