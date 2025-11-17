@@ -1,0 +1,21 @@
+#page-header {
+  padding-inline: calc($spacing) * 4;
+  padding-top: calc($spacing) * 16;
+  @media (width >= 48rem) {
+    padding-inline: calc($spacing) * 8;
+  }
+}
+#page-header h1 {
+  font-size: $text-3xl;
+  line-height: $tw-leading, $text-3xl--line-height;
+  $tw-font-weight: $font-weight-semibold;
+  font-weight: $font-weight-semibold;
+}
+#page-header p {
+  font-size: $text-lg;
+  line-height: $tw-leading, $text-lg--line-height;
+  color: $color-zinc-600;
+  @media (prefers-color-scheme: dark) {
+    color: $color-zinc-400;
+  }
+}

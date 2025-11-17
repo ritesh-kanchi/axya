@@ -1,0 +1,18 @@
+{% if site.pages %}
+<section>
+  <h2>Pages</h2>
+  <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    {%- assign pages_list = site.pages | where_exp: "p", "p.layout == 'page' or
+    p.data.layout == 'page'" -%} {% for p in pages_list %}
+    <li>
+      <a href="{{ p.url | relative_url }}" class="page-card group">
+        <h3>{{ p.title | escape }}</h3>
+        <p>{{ p.description | escape }}</p>
+        <div class="arrow-icon" aria-hidden="true">→</div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+<hr />
+{% endif %}

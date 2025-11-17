@@ -1,0 +1,29 @@
+$footer-bg-color: $color-background;
+$footer-border-color: $color-border;
+$footer-text-color: $color-text;
+$footer-link-color: $color-links;
+
+footer {
+  background: $footer-bg-color;
+  border-top: 1px solid $footer-border-color;
+  padding-inline: calc($spacing) * 4;
+
+  @media screen and (min-width: $breakpoint-md) {
+    padding-inline: calc($spacing) * 8;
+  }
+}
+
+footer .container {
+  padding: calc($spacing) * 6;
+}
+
+footer .container p {
+  font-size: $text-sm;
+  line-height: $leading, $text-sm--line-height;
+  color: $footer-text-color;
+}
+
+footer .container a {
+  color: $footer-link-color;
+  text-decoration: underline;
+}
