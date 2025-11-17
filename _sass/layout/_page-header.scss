@@ -6,22 +6,22 @@
   @media screen and (min-width: abstracts.$breakpoint-md) {
     padding-inline: calc(abstracts.$spacing) * 8;
   }
-}
 
-#page-header .container {
-  @extend .space-y-4;
-}
+  .container {
+    @extend .space-y-4;
+  }
 
-#page-header h1 {
-  font-size: abstracts.$text-3xl;
-  line-height: abstracts.$leading, abstracts.$text-3xl--line-height;
-  font-weight: abstracts.$font-weight-semibold;
-}
-#page-header p {
-  font-size: abstracts.$text-lg;
-  line-height: abstracts.$leading, abstracts.$text-lg--line-height;
-  color: abstracts.$color-zinc-600;
-  @media (prefers-color-scheme: dark) {
-    color: abstracts.$color-zinc-400;
+  h1 {
+    font-size: abstracts.$text-3xl;
+    line-height: abstracts.$leading, abstracts.$text-3xl--line-height;
+    font-weight: abstracts.$font-weight-semibold;
+  }
+  p {
+    font-size: abstracts.$text-lg;
+    line-height: abstracts.$leading, abstracts.$text-lg--line-height;
+    color: abstracts.$color-zinc-600;
+    @media (prefers-color-scheme: dark) {
+      color: abstracts.$color-zinc-400;
+    }
   }
 }

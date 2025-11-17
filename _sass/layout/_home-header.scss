@@ -13,6 +13,29 @@
   @media (prefers-color-scheme: dark) {
     border-color: abstracts.$color-zinc-800;
   }
+
+  h1 {
+    max-width: $container-5xl;
+    font-size: $text-3xl;
+    line-height: $leading, $text-3xl--line-height;
+    line-height: $leading-tight;
+    font-weight: $font-weight-semibold;
+    text-wrap: balance;
+    @media screen and (min-width: $breakpoint-md) {
+      font-size: $text-3xl;
+      line-height: $leading, $text-3xl--line-height;
+    }
+  }
+
+  .container {
+    @extend .space-y-4;
+  }
+
+  #affiliation {
+    font-size: abstracts.$text-sm;
+    line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+    color: abstracts.$color-zinc-600;
+  }
 }
 
 .header-pill-group {
@@ -29,27 +52,4 @@
   align-items: center;
   justify-content: flex-start;
   gap: calc(abstracts.$spacing) * 4;
-}
-
-#home-header h1 {
-  max-width: $container-5xl;
-  font-size: $text-3xl;
-  line-height: $leading, $text-3xl--line-height;
-  line-height: $leading-tight;
-  font-weight: $font-weight-semibold;
-  text-wrap: balance;
-  @media screen and (min-width: $breakpoint-md) {
-    font-size: $text-3xl;
-    line-height: $leading, $text-3xl--line-height;
-  }
-}
-
-#home-header .container {
-  @extend .space-y-4;
-}
-
-#affiliation {
-  font-size: abstracts.$text-sm;
-  line-height: abstracts.$leading, abstracts.$text-sm--line-height;
-  color: abstracts.$color-zinc-600;
 }

@@ -13,19 +13,18 @@ footer {
   @media screen and (min-width: abstracts.$breakpoint-md) {
     padding-inline: calc(abstracts.$spacing) * 8;
   }
-}
 
-footer .container {
-  padding: calc(abstracts.$spacing) * 6;
-}
+  .container {
+    padding: calc(abstracts.$spacing) * 6;
 
-footer .container p {
-  font-size: abstracts.$text-sm;
-  line-height: abstracts.$leading, abstracts.$text-sm--line-height;
-  color: $footer-text-color;
-}
-
-footer .container a {
-  color: $footer-link-color;
-  text-decoration: underline;
+    p {
+      font-size: abstracts.$text-sm;
+      line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+      color: $footer-text-color;
+    }
+    a {
+      color: $footer-link-color;
+      text-decoration: underline;
+    }
+  }
 }

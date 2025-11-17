@@ -31,36 +31,37 @@
       background-color: abstracts.$color-zinc-900;
     }
   }
-}
 
-.page-card h3 {
-  font-size: abstracts.$text-lg;
-  line-height: abstracts.$leading, abstracts.$text-lg--line-height;
-  font-weight: abstracts.$font-weight-semibold;
-  color: abstracts.$color-headings;
-}
+  h3 {
+    font-size: abstracts.$text-lg;
+    line-height: abstracts.$leading, abstracts.$text-lg--line-height;
+    font-weight: abstracts.$font-weight-semibold;
+    color: abstracts.$color-headings;
+  }
 
-.page-card p {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  font-size: abstracts.$text-sm;
-  line-height: abstracts.$leading, abstracts.$text-sm--line-height;
-  color: abstracts.$color-text;
-}
-.page-card .arrow-icon {
-  pointer-events: none;
-  position: absolute;
-  top: calc(abstracts.$spacing) * 2;
-  right: calc(abstracts.$spacing) * 2;
-  width: calc(abstracts.$spacing) * 5;
-  height: calc(abstracts.$spacing) * 5;
-  color: abstracts.$color-zinc-500;
-  -webkit-user-select: none;
-  user-select: none;
-  &:is(:where(.group):hover *) {
-    color: abstracts.$color-zinc-600;
+  p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    font-size: abstracts.$text-sm;
+    line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+    color: abstracts.$color-text;
+  }
+
+  .arrow-icon {
+    pointer-events: none;
+    position: absolute;
+    top: calc(abstracts.$spacing) * 2;
+    right: calc(abstracts.$spacing) * 2;
+    width: calc(abstracts.$spacing) * 5;
+    height: calc(abstracts.$spacing) * 5;
+    color: abstracts.$color-zinc-500;
+    -webkit-user-select: none;
+    user-select: none;
+    &:is(:where(.group):hover *) {
+      color: abstracts.$color-zinc-600;
+    }
   }
 }

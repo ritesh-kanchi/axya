@@ -24,15 +24,15 @@
   &:focus {
     outline: none;
   }
-}
 
-#nav-toggle svg {
-  width: calc(abstracts.$spacing) * 6;
-  height: calc(abstracts.$spacing) * 6;
-}
+  svg {
+    width: calc(abstracts.$spacing) * 6;
+    height: calc(abstracts.$spacing) * 6;
+  }
 
-#nav-toggle #nav-close-icon {
-  display: none;
+  #nav-close-icon {
+    display: none;
+  }
 }
 
 #mobile-menu {
@@ -54,14 +54,14 @@
   transition-property: all;
   transition-timing-function: ease-in-out;
   display: none;
-}
 
-#mobile-menu h2 {
-  font-size: abstracts.$text-lg;
-  line-height: abstracts.$leading, abstracts.$text-lg--line-height;
-  font-weight: abstracts.$font-weight-semibold;
-}
+  h2 {
+    font-size: abstracts.$text-lg;
+    line-height: abstracts.$leading, abstracts.$text-lg--line-height;
+    font-weight: abstracts.$font-weight-semibold;
+  }
 
-#mobile-menu ul {
-  @extend .space-y-2;
+  ul {
+    @extend .space-y-2;
+  }
 }
