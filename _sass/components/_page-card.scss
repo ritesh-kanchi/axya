@@ -21,8 +21,10 @@
   transition-timing-function: abstracts.$default-transition-timing-function;
   transition-duration: abstracts.$default-transition-duration;
 
-  &:hover {
-    background-color: var(--color-background-hover);
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--color-background-hover);
+    }
   }
 
   h3 {

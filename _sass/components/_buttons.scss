@@ -20,8 +20,10 @@
   transition-timing-function: abstracts.$default-transition-timing-function;
   transition-duration: abstracts.$default-transition-duration;
 
-  &:hover {
-    border-color: var(--color-primary-hover);
-    background-color: var(--color-primary-hover);
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--color-primary-hover);
+      background-color: var(--color-primary-hover);
+    }
   }
 }
