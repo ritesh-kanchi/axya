@@ -1,7 +1,7 @@
 @use "../abstracts/" as abstracts;
 
 #nav-toggle {
-  @media screen and (min-width: abstracts.$breakpoint-md) {
+  @media (min-width: abstracts.$breakpoint-md) {
     display: none !important;
   }
 

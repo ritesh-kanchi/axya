@@ -10,7 +10,7 @@ nav {
   border-bottom: 1px solid;
   border-color: var(--color-border);
 
-  @media screen and (min-width: abstracts.$breakpoint-md) {
+  @media (min-width: abstracts.$breakpoint-md) {
     padding-inline: calc(abstracts.$spacing * 8);
   }
 
@@ -28,7 +28,7 @@ nav {
       font-size: abstracts.$text-sm;
       line-height: abstracts.$leading, abstracts.$text-sm--line-height;
 
-      @media screen and (min-width: abstracts.$breakpoint-md) {
+      @media (min-width: abstracts.$breakpoint-md) {
         display: flex;
       }
 

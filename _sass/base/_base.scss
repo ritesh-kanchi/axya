@@ -17,7 +17,7 @@ hr {
 
 main {
   padding-inline: calc(abstracts.$spacing) * 4;
-  @media screen and (min-width: abstracts.$breakpoint-md) {
+  @media (min-width: abstracts.$breakpoint-md) {
     padding-inline: calc(abstracts.$spacing) * 8;
   }
 }
