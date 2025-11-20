@@ -21,7 +21,7 @@ Live Example:
 
 - Accessible layouts for research websites
 - Homepage with hero section + automatic page grid
-- Clean typography and Tailwind‑generated CSS
+- Clean typography
 - Configurable metadata:
   - Conference name & year
   - Authors
@@ -128,7 +128,7 @@ Add as many authors or links as needed.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/ritesh-kanchi/accessible-research-theme. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
+Bug reports and pull requests are welcome on GitHub at [https://github.com/ritesh-kanchi/axya](https://github.com/ritesh-kanchi/axya). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
 
 I appreciate any feedback or suggestions for improvements!
 
