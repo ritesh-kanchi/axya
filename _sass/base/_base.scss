@@ -1,0 +1,32 @@
+@use "../abstracts/" as abstracts;
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  scroll-behavior: smooth;
+}
+
+hr {
+  border-color: var(--color-border);
+}
+
+.container {
+  margin-inline: auto;
+  max-width: abstracts.$container-6xl;
+}
+
+main {
+  padding-inline: calc(abstracts.$spacing) * 4;
+  @media (min-width: abstracts.$breakpoint-md) {
+    padding-inline: calc(abstracts.$spacing) * 8;
+  }
+}
+
+main section {
+  :where(& > :not(:last-child)) {
+    $tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(abstracts.$spacing) * 4) * $tw-space-y-reverse;
+    margin-block-end: calc(calc(abstracts.$spacing) * 4) *
+      calc(1 - $tw-space-y-reverse);
+  }
+}

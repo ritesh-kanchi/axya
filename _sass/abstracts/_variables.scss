@@ -1,0 +1,169 @@
+// Colors
+$color-black: #000;
+$color-white: #fff;
+
+$color-zinc-50: oklch(98.5% 0 0);
+$color-zinc-100: oklch(96.7% 0.001 286.375);
+$color-zinc-200: oklch(92% 0.004 286.32);
+$color-zinc-300: oklch(87.1% 0.006 286.286);
+$color-zinc-400: oklch(70.5% 0.015 286.067);
+$color-zinc-500: oklch(55.2% 0.016 285.938);
+$color-zinc-600: oklch(44.2% 0.017 285.786);
+$color-zinc-700: oklch(37% 0.013 285.805);
+$color-zinc-800: oklch(27.4% 0.006 286.033);
+$color-zinc-900: oklch(21% 0.006 285.885);
+$color-zinc-950: oklch(14.1% 0.005 285.823);
+
+$color-blue-500: oklch(62.3% 0.214 259.815);
+$color-blue-600: oklch(54.6% 0.245 262.881);
+$color-blue-700: oklch(48.8% 0.243 264.376);
+
+// Fonts
+$font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-display: "Inter Tight", "Inter", "SF Pro", $font-sans !default;
+$font-text: "Inter", "SF Pro", $font-sans !default;
+$font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace !default;
+
+$colors-zinc: (
+  50: $color-zinc-50,
+  100: $color-zinc-100,
+  200: $color-zinc-200,
+  300: $color-zinc-300,
+  400: $color-zinc-400,
+  500: $color-zinc-500,
+  600: $color-zinc-600,
+  700: $color-zinc-700,
+  800: $color-zinc-800,
+  900: $color-zinc-900,
+  950: $color-zinc-950,
+);
+
+$colors-accent: (
+  primary: $color-blue-600,
+  primary-hover: $color-blue-700,
+  primary-text: $color-white,
+  secondary: $color-zinc-600,
+  secondary-hover: $color-zinc-700,
+  secondary-text: $color-black,
+) !default;
+
+$colors-accent-dark: (
+  primary: $color-blue-600,
+  primary-hover: $color-blue-700,
+  primary-text: $color-white,
+  secondary: $color-zinc-600,
+  secondary-hover: $color-zinc-700,
+  secondary-text: $color-white,
+) !default;
+
+$colors-light: (
+  headings: $color-black,
+  text: $color-zinc-700,
+  background: $color-white,
+  background-hover: $color-zinc-50,
+  border: $color-zinc-200,
+  links: $color-zinc-900,
+) !default;
+
+$colors-dark: (
+  headings: $color-white,
+  text: $color-zinc-400,
+  background: $color-zinc-950,
+  background-hover: $color-zinc-900,
+  border: $color-zinc-800,
+  links: $color-zinc-200,
+) !default;
+
+:root {
+  @each $key, $value in $colors-light {
+    --color-#{$key}: #{$value};
+  }
+
+  @each $key, $value in $colors-accent {
+    --color-#{$key}: #{$value};
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @each $key, $value in $colors-dark {
+      --color-#{$key}: #{$value};
+    }
+
+    @each $key, $value in $colors-accent-dark {
+      --color-#{$key}: #{$value};
+    }
+  }
+}
+
+// Article Prose
+$prose-body: var(--color-text);
+$prose-headings: var(--color-headings);
+$prose-background: var(--color-background);
+$prose-lead: var(--color-text);
+$prose-links: var(--color-links);
+$prose-bold: $prose-headings;
+$prose-counters: var(--color-text);
+$prose-bullets: var(--color-text);
+$prose-hr: var(--color-border);
+$prose-quotes: var(--color-text);
+$prose-quote-borders: $prose-hr;
+$prose-captions: var(--color-text);
+$prose-kbd: var(--color-text);
+$prose-kbd-shadows: color-mix(
+  in oklab,
+  oklch(21% 0.006 285.885) 10%,
+  transparent
+);
+$prose-code: var(--color-headings);
+$prose-pre-bg: var(--color-background);
+$prose-pre-text: var(--color-text);
+$prose-pre-code: var(--color-text);
+$prose-th-borders: var(--color-border);
+$prose-td-borders: var(--color-border);
+
+// Typography
+$text-sm: 0.875rem;
+$text-sm--line-height: calc(1.25 / 0.875);
+$text-lg: 1.125rem;
+$text-lg--line-height: calc(1.75 / 1.125);
+$text-2xl: 1.5rem;
+$text-2xl--line-height: calc(2 / 1.5);
+$text-3xl: 1.875rem;
+$text-3xl--line-height: calc(2.25 / 1.875);
+$text-4xl: 2.25rem;
+$text-4xl--line-height: calc(2.5 / 2.25);
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+
+// Sizing
+$spacing: 0.25rem;
+$leading: 1.5;
+$leading-tight: 1.25;
+
+$space-y-reverse: 0;
+
+$radius-lg: 0.5rem;
+
+$container-3xl: 48rem;
+$container-4xl: 56rem;
+$container-5xl: 64rem;
+$container-6xl: 72rem;
+
+// Breakpoints
+$breakpoint-sm: 30rem;
+$breakpoint-md: 48rem;
+$breakpoint-lg: 64rem;
+$breakpoint-xl: 80rem;
+
+// Other
+$border-style: solid;
+$border-width: 1px;
+$rounded-full: calc(infinity * 1px);
+
+$default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+$default-transition-duration: 0.3s;

@@ -1,0 +1,43 @@
+@use "../abstracts/" as abstracts;
+
+nav {
+  background-color: var(--color-background);
+  top: 0;
+  padding-inline: calc(abstracts.$spacing * 4);
+  padding: calc(abstracts.$spacing * 4) 0;
+  width: 100%;
+  z-index: 50;
+  border-bottom: 1px solid;
+  border-color: var(--color-border);
+
+  @media (min-width: abstracts.$breakpoint-md) {
+    padding-inline: calc(abstracts.$spacing * 8);
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      align-items: center;
+      justify-content: flex-end;
+      gap: calc(abstracts.$spacing) * 8;
+      font-size: abstracts.$text-sm;
+      line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+
+      @media (min-width: abstracts.$breakpoint-md) {
+        display: flex;
+      }
+
+      li a {
+        color: var(--color-text);
+      }
+    }
+  }
+
+  #site-title {
+    font-weight: abstracts.$font-weight-semibold;
+    color: var(--color-text);
+  }
+}

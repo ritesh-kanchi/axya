@@ -1,0 +1,24 @@
+@use "../abstracts/" as abstracts;
+
+#page-header {
+  padding-inline: calc(abstracts.$spacing) * 4;
+  padding-top: calc(abstracts.$spacing) * 16;
+  @media (min-width: abstracts.$breakpoint-md) {
+    padding-inline: calc(abstracts.$spacing) * 8;
+  }
+
+  .container {
+    @extend .space-y-4;
+  }
+
+  h1 {
+    font-size: abstracts.$text-3xl;
+    line-height: abstracts.$leading, abstracts.$text-3xl--line-height;
+    font-weight: abstracts.$font-weight-semibold;
+  }
+  p {
+    font-size: abstracts.$text-lg;
+    line-height: abstracts.$leading, abstracts.$text-lg--line-height;
+    color: var(--color-text);
+  }
+}

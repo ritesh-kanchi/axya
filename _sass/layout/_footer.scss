@@ -1,0 +1,25 @@
+@use "../abstracts/" as abstracts;
+
+footer {
+  background: var(--color-background);
+  border-top: 1px solid var(--color-border);
+  padding-inline: calc(abstracts.$spacing) * 4;
+  color: var(--color-text);
+
+  @media (min-width: abstracts.$breakpoint-md) {
+    padding-inline: calc(abstracts.$spacing) * 8;
+  }
+
+  .container {
+    padding: calc(abstracts.$spacing) * 6;
+
+    p {
+      font-size: abstracts.$text-sm;
+      line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+    }
+    a {
+      color: var(--color-links);
+      text-decoration: underline;
+    }
+  }
+}
