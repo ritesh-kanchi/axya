@@ -55,8 +55,10 @@
     color: abstracts.$color-zinc-500;
     -webkit-user-select: none;
     user-select: none;
-    &:is(:where(.group):hover *) {
-      color: abstracts.$color-zinc-600;
+    @media (hover: hover) {
+      &:is(:where(.group):hover *) {
+        color: abstracts.$color-zinc-600;
+      }
     }
   }
 }
