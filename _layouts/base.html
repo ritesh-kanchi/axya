@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
   </head>
   <body>
-    {%- include navbar.html -%} {{content}} {%- include footer.html -%}
+    {%- include navbar.html -%}
+    <div class="container site-layout">
+      {% include sidebar.html %}
+      <div>
+        <main class="main-content">{{ content }}</main>
+        {%- include footer.html -%}
+      </div>
+    </div>
     <script src="/assets/js/scripts.js" defer></script>
   </body>
 </html>

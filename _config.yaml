@@ -28,3 +28,6 @@ permalink: pretty
 
 plugins:
   - jekyll-seo-tag
+
+watch:
+  - ../

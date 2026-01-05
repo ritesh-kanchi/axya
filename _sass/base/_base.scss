@@ -12,13 +12,13 @@ hr {
 
 .container {
   margin-inline: auto;
-  max-width: abstracts.$container-6xl;
+  max-width: abstracts.$container-7xl;
 }
 
 main {
   padding-inline: calc(abstracts.$spacing) * 4;
   @media (min-width: abstracts.$breakpoint-md) {
-    padding-inline: calc(abstracts.$spacing) * 8;
+    padding-inline: calc(abstracts.$spacing) * 0;
   }
 }
 

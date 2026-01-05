@@ -4,12 +4,12 @@
   border-bottom-style: abstracts.$border-style;
   border-bottom-width: 1px;
   border-color: var(--color-border);
-  padding-inline: calc(abstracts.$spacing) * 4;
+  // padding-inline: calc(abstracts.$spacing) * 4;
   padding-top: calc(abstracts.$spacing) * 16;
   padding-bottom: calc(abstracts.$spacing) * 8;
-  @media (min-width: abstracts.$breakpoint-md) {
-    padding-inline: calc(abstracts.$spacing) * 8;
-  }
+  // @media (min-width: abstracts.$breakpoint-md) {
+  //   padding-inline: calc(abstracts.$spacing) * 8;
+  // }
 
   h1 {
     max-width: abstracts.$container-5xl;
@@ -22,10 +22,6 @@
       font-size: abstracts.$text-3xl;
       line-height: abstracts.$leading, abstracts.$text-3xl--line-height;
     }
-  }
-
-  .container {
-    @extend .space-y-4;
   }
 
   #affiliation {

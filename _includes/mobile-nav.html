@@ -26,13 +26,5 @@
   </button>
 </div>
 <ul id="mobile-menu-list" style="display: none">
-  <li>
-    <a href="{{ '/' | relative_url }}"> Home </a>
-  </li>
-  {%- assign pages_list = site.pages | where_exp: "p", "p.layout == 'page' or
-  p.data.layout == 'page'" -%} {% for p in pages_list %}
-  <li>
-    <a href="{{ p.url | relative_url }}"> {{ p.title | escape }} </a>
-  </li>
-  {% endfor %}
+  {%- include pages-list.html -%}
 </ul>

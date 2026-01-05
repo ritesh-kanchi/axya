@@ -1,0 +1,78 @@
+@use "../abstracts/" as abstracts;
+
+.site-layout {
+  display: block;
+
+  @media (min-width: abstracts.$breakpoint-md) {
+    display: flex;
+    align-items: flex-start;
+    // We remove the 'gap' here because the sidebar border will touch the content
+  }
+}
+
+#sidebar {
+  display: none;
+
+  @media (min-width: abstracts.$breakpoint-md) {
+    display: block;
+    width: 340px;
+    flex-shrink: 0;
+
+    // Fixed part of the page logic
+    position: sticky;
+    top: 0; // Sticks to the very top of the viewport
+    height: 100vh; // Full viewport height
+
+    background-color: var(--color-background);
+    border-right: 1px solid var(--color-border);
+    padding: calc(abstracts.$spacing * 8) calc(abstracts.$spacing * 4);
+    overflow-y: auto;
+  }
+
+  h2 {
+    font-size: abstracts.$text-xs;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text);
+    margin-bottom: calc(abstracts.$spacing * 4);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    margin-bottom: 2px;
+
+    a {
+      display: block;
+      padding: calc(abstracts.$spacing * 2) calc(abstracts.$spacing * 3);
+      color: var(--color-text); // Gray-700
+      text-decoration: none;
+      font-size: abstracts.$text-sm;
+      line-height: 1.5;
+      border-radius: abstracts.$radius-md; // Hover rounded on items
+      transition: all 0.2s ease;
+
+      // Handling very long titles
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    &:hover a {
+      background-color: var(
+        --color-background-hover
+      ); // Gray-100 (Rounded hover effect)
+      color: var(--color-links);
+    }
+  }
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: calc(abstracts.$spacing * 8); // Add breath room for the content
+}
