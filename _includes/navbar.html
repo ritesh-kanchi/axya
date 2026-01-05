@@ -1,3 +1,33 @@
 <nav role="navigation" aria-label="Main navigation">
-  {%- include mobile-nav.html -%}
+  <div style="display: flex; justify-content: end; align-items: center">
+    <button id="nav-button" aria-expanded="false" aria-label="Open Menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        aria-hidden="true"
+      >
+        <path
+          id="nav-close-icon"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          style="display: none"
+          d="M6 18 18 6M6 6l12 12"
+        />
+        <path
+          id="nav-open-icon"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </svg>
+      <span class="sr-only">Menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" style="display: none">
+    {%- include pages-list.html -%}
+  </div>
 </nav>
+<div id="overlay" style="display: none"></div>

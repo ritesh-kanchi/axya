@@ -6,7 +6,6 @@
   @media (min-width: $breakpoint-md) {
     display: flex;
     align-items: flex-start;
-    // We remove the 'gap' here because the sidebar border will touch the content
   }
 }
 
@@ -18,10 +17,9 @@
     width: 340px;
     flex-shrink: 0;
 
-    // Fixed part of the page logic
     position: sticky;
-    top: 0; // Sticks to the very top of the viewport
-    height: 100vh; // Full viewport height
+    top: 0;
+    height: 100vh;
 
     background-color: var(--color-background);
     border-right: 1px solid var(--color-border);
@@ -31,21 +29,22 @@
 
   h2 {
     font-size: $text-xs;
-    font-weight: 700;
+    font-weight: $font-weight-semibold;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--color-text);
     margin-bottom: calc($spacing * 4);
+    text-wrap: balance;
   }
 }
 
 .main-content {
   flex: 1;
   min-width: 0;
-  padding: calc($spacing * 4); // Add breath room for the content
+  padding: calc($spacing * 4);
 
   @media (min-width: $breakpoint-md) {
-    padding: calc($spacing * 8); // Add breath room for the content
+    padding: calc($spacing * 8);
   }
 }
 
@@ -54,28 +53,33 @@ ul.pages-list {
   padding: 0;
   margin: 0;
 
-  li {
+  li.nav-item {
     margin-bottom: 2px;
+
+    &.active {
+      a {
+        font-weight: $font-weight-semibold;
+        color: var(--color-links);
+        background-color: var(--color-background-hover);
+      }
+    }
 
     a {
       display: block;
       padding: calc($spacing * 2) calc($spacing * 3);
-      color: var(--color-text); // Gray-700
+      color: var(--color-text);
       text-decoration: none;
       font-size: $text-sm;
       line-height: 1.5;
-      border-radius: $radius-md; // Hover rounded on items
+      border-radius: $radius-md;
       transition: all 0.2s ease;
 
-      // Handling very long titles
       overflow-wrap: break-word;
       word-wrap: break-word;
     }
 
     &:hover a {
-      background-color: var(
-        --color-background-hover
-      ); // Gray-100 (Rounded hover effect)
+      background-color: var(--color-background-hover);
       color: var(--color-links);
     }
   }

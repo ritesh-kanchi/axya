@@ -15,13 +15,6 @@ hr {
   max-width: $container-7xl;
 }
 
-main {
-  // padding-inline: calc($spacing) * 4;
-  // @media (min-width: $breakpoint-md) {
-  //   padding-inline: calc($spacing) * 0;
-  // }
-}
-
 main section {
   :where(& > :not(:last-child)) {
     $tw-space-y-reverse: 0;
