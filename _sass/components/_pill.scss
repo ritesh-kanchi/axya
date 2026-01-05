@@ -1,4 +1,4 @@
-@use "../abstracts/" as abstracts;
+@use "../abstracts/" as *;
 
 .header-pill {
   display: inline-block;

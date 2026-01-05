@@ -1,4 +1,4 @@
-@use "../abstracts/" as abstracts;
+@use "../abstracts/" as *;
 
 .site-layout {
   display: block;
@@ -37,12 +37,22 @@
     color: var(--color-text);
     margin-bottom: calc($spacing * 4);
   }
+}
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: calc($spacing * 4); // Add breath room for the content
+
+  @media (min-width: $breakpoint-md) {
+    padding: calc($spacing * 8); // Add breath room for the content
   }
+}
+
+ul.pages-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 
   li {
     margin-bottom: 2px;
@@ -69,10 +79,4 @@
       color: var(--color-links);
     }
   }
-}
-
-.main-content {
-  flex: 1;
-  min-width: 0;
-  padding: calc($spacing * 8); // Add breath room for the content
 }

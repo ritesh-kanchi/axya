@@ -1,4 +1,4 @@
-@use "../abstracts/" as abstracts;
+@use "../abstracts/" as *;
 
 nav {
   @media (min-width: $breakpoint-md) {
@@ -11,8 +11,13 @@ nav {
   height: calc($spacing) * 6;
 }
 
-#mobile-menu-list {
-  li a {
-    display: block;
+#mobile-menu {
+  h2 {
+    font-size: $text-xs;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text);
+    margin-bottom: calc($spacing * 4);
   }
 }

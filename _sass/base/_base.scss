@@ -1,4 +1,4 @@
-@use "../abstracts/" as abstracts;
+@use "../abstracts/" as *;
 
 body {
   background-color: var(--color-background);
@@ -16,10 +16,10 @@ hr {
 }
 
 main {
-  padding-inline: calc($spacing) * 4;
-  @media (min-width: $breakpoint-md) {
-    padding-inline: calc($spacing) * 0;
-  }
+  // padding-inline: calc($spacing) * 4;
+  // @media (min-width: $breakpoint-md) {
+  //   padding-inline: calc($spacing) * 0;
+  // }
 }
 
 main section {
