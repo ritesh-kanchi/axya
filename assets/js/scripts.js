@@ -1,39 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const mobileMenu = document.getElementById("mobile-menu");
-  const nav = document.querySelector("nav");
-  const overlay = document.getElementById("overlay");
+  const openIcon = document.getElementById("open-icon");
+  const closeIcon = document.getElementById("close-icon");
 
-  const navButton = document.getElementById("nav-button");
-  const openIcon = document.getElementById("nav-open-icon");
-  const closeIcon = document.getElementById("nav-close-icon");
+  const mobileHeader = document.getElementsByClassName("mobile-header")[0];
 
-  if (!navButton || !mobileMenu || !overlay || !nav) return;
+  const toggle = document.getElementById("nav-toggle");
+  const menu = document.getElementById("nav-menu");
+  const overlay = document.getElementById("nav-overlay");
 
-  function openMenu() {
-    mobileMenu.style.display = "block";
-    nav.classList.toggle("shadow");
-    navButton.setAttribute("aria-expanded", "true");
-    navButton.setAttribute("aria-label", "Close Menu");
-    if (openIcon) openIcon.style.display = "none";
-    if (closeIcon) closeIcon.style.display = "block";
-    overlay.style.display = "block";
-    overlay.onclick = closeMenu;
+  function toggleMenu() {
+    const isOpen = menu.classList.toggle("is-open");
+    overlay.classList.toggle("is-visible");
+    toggle.setAttribute("aria-expanded", isOpen);
+    // Toggle your icons here
+    if (isOpen) {
+      openIcon.style.display = "none";
+      closeIcon.style.display = "block";
+      mobileHeader.style.borderBottom = "none";
+    } else {
+      openIcon.style.display = "block";
+      closeIcon.style.display = "none";
+      mobileHeader.style.borderBottom = "";
+    }
   }
 
-  function closeMenu() {
-    mobileMenu.style.display = "none";
-    nav.classList.toggle("shadow");
-    navButton.setAttribute("aria-expanded", "false");
-    navButton.setAttribute("aria-label", "Open Menu");
-    if (openIcon) openIcon.style.display = "block";
-    if (closeIcon) closeIcon.style.display = "none";
-    overlay.style.display = "none";
-    overlay.onclick = null;
-  }
-
-  navButton.addEventListener("click", function () {
-    const expanded = navButton.getAttribute("aria-expanded") === "true";
-    if (expanded) closeMenu();
-    else openMenu();
-  });
+  toggle.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", toggleMenu);
 });

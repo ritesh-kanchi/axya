@@ -1,0 +1,36 @@
+<nav id="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="mobile-header">
+    <button id="nav-toggle" aria-expanded="false" aria-label="Toggle Menu">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        aria-hidden="true"
+      >
+        <path id="open-icon" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        <path id="close-icon" style="display: none" d="M6 18 18 6M6 6l12 12" />
+      </svg>
+      <span class="sr-only">Menu</span>
+    </button>
+  </div>
+  <div id="nav-menu">
+    <div class="nav-content">
+      <h2>{{ site.title | escape }}</h2>
+      <ul class="pages-list">
+        <li class="nav-item{% if page.url == '/' %} active{% endif %}">
+          <a href="{{ '/' | relative_url }}"> Home </a>
+        </li>
+
+        {%- assign pages_list = site.pages | where_exp: "p", "p.layout == 'page'
+        or p.data.layout == 'page'" -%} {% for p in pages_list %} {% if p.url !=
+        '/' %}
+        <li class="nav-item{% if page.url == p.url %} active{% endif %}">
+          <a href="{{ p.url | relative_url }}"> {{ p.title | escape }} </a>
+        </li>
+        {% endif %} {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div id="nav-overlay"></div>
+</nav>

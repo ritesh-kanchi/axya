@@ -4,12 +4,9 @@
   border-bottom-style: $border-style;
   border-bottom-width: 1px;
   border-color: var(--color-border);
-  // padding-inline: calc($spacing) * 4;
+
   padding-top: calc($spacing) * 16;
   padding-bottom: calc($spacing) * 8;
-  // @media (min-width: $breakpoint-md) {
-  //   padding-inline: calc($spacing) * 8;
-  // }
 
   h1 {
     max-width: $container-5xl;

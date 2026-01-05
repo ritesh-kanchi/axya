@@ -1,11 +1,7 @@
 @use "../abstracts/" as *;
 
 #page-header {
-  // padding-inline: calc($spacing) * 4;
   padding-top: calc($spacing) * 16;
-  // @media (min-width: $breakpoint-md) {
-  //   padding-inline: calc($spacing) * 8;
-  // }
 
   h1 {
     font-size: $text-3xl;
