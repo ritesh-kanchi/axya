@@ -3,8 +3,8 @@
 #home-page-grid {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: calc(abstracts.$spacing) * 4;
-  @media (min-width: abstracts.$breakpoint-md) {
+  gap: calc($spacing) * 4;
+  @media (min-width: $breakpoint-md) {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

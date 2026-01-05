@@ -1,14 +1,14 @@
 @use "../abstracts/" as abstracts;
 
 nav {
-  @media (min-width: abstracts.$breakpoint-md) {
+  @media (min-width: $breakpoint-md) {
     display: none !important;
   }
 }
 
 #nav-button svg {
-  width: calc(abstracts.$spacing) * 6;
-  height: calc(abstracts.$spacing) * 6;
+  width: calc($spacing) * 6;
+  height: calc($spacing) * 6;
 }
 
 #mobile-menu-list {

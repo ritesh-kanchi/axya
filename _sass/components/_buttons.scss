@@ -3,22 +3,22 @@
 .header-button {
   display: inline-block;
   border-radius: calc(infinity * 1px);
-  border-style: abstracts.$border-style;
+  border-style: $border-style;
   border-width: 1px;
   border-color: var(--color-primary);
   background-color: var(--color-primary);
-  padding-inline: calc(abstracts.$spacing) * 3;
-  padding-block: calc(abstracts.$spacing) * 1;
-  font-size: abstracts.$text-sm;
-  line-height: abstracts.$leading, abstracts.$text-sm--line-height;
-  font-weight: abstracts.$font-weight-medium;
+  padding-inline: calc($spacing) * 3;
+  padding-block: calc($spacing) * 1;
+  font-size: $text-sm;
+  line-height: $leading, $text-sm--line-height;
+  font-weight: $font-weight-medium;
   color: var(--color-primary-text);
   transition-property: color, background-color, border-color, outline-color,
     text-decoration-color, fill, stroke, opacity, box-shadow, transform,
     translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter,
     display, content-visibility, overlay, pointer-events;
-  transition-timing-function: abstracts.$default-transition-timing-function;
-  transition-duration: abstracts.$default-transition-duration;
+  transition-timing-function: $default-transition-timing-function;
+  transition-duration: $default-transition-duration;
 
   @media (hover: hover) {
     &:hover {

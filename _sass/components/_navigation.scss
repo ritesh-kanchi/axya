@@ -4,15 +4,15 @@ nav {
   position: fixed;
   background-color: var(--color-background);
   top: 0;
-  padding-inline: calc(abstracts.$spacing * 4);
-  padding: calc(abstracts.$spacing * 4);
+  padding-inline: calc($spacing * 4);
+  padding: calc($spacing * 4);
   width: 100%;
   z-index: 50;
   border-bottom: 1px solid;
   border-color: var(--color-border);
 
-  @media (min-width: abstracts.$breakpoint-md) {
-    padding-inline: calc(abstracts.$spacing * 8);
+  @media (min-width: $breakpoint-md) {
+    padding-inline: calc($spacing * 8);
   }
 
   .container {
@@ -23,11 +23,11 @@ nav {
     ul {
       align-items: center;
       justify-content: flex-end;
-      gap: calc(abstracts.$spacing) * 8;
-      font-size: abstracts.$text-sm;
-      line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+      gap: calc($spacing) * 8;
+      font-size: $text-sm;
+      line-height: $leading, $text-sm--line-height;
 
-      @media (min-width: abstracts.$breakpoint-md) {
+      @media (min-width: $breakpoint-md) {
         display: flex;
       }
 
@@ -38,7 +38,7 @@ nav {
   }
 
   #site-title {
-    font-weight: abstracts.$font-weight-semibold;
+    font-weight: $font-weight-semibold;
     color: var(--color-text);
   }
 }

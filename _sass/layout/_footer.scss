@@ -5,16 +5,16 @@ footer {
   border-top: 1px solid var(--color-border);
   border-image: linear-gradient(to right, var(--color-border), transparent 100%)
     1;
-  padding: calc(abstracts.$spacing) * 4;
+  padding: calc($spacing) * 4;
   color: var(--color-text);
 
-  @media (min-width: abstracts.$breakpoint-md) {
-    padding: calc(abstracts.$spacing) * 8;
+  @media (min-width: $breakpoint-md) {
+    padding: calc($spacing) * 8;
   }
 
   p {
-    font-size: abstracts.$text-sm;
-    line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+    font-size: $text-sm;
+    line-height: $leading, $text-sm--line-height;
   }
   a {
     color: var(--color-links);

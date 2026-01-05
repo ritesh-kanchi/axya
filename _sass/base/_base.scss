@@ -12,21 +12,20 @@ hr {
 
 .container {
   margin-inline: auto;
-  max-width: abstracts.$container-7xl;
+  max-width: $container-7xl;
 }
 
 main {
-  padding-inline: calc(abstracts.$spacing) * 4;
-  @media (min-width: abstracts.$breakpoint-md) {
-    padding-inline: calc(abstracts.$spacing) * 0;
+  padding-inline: calc($spacing) * 4;
+  @media (min-width: $breakpoint-md) {
+    padding-inline: calc($spacing) * 0;
   }
 }
 
 main section {
   :where(& > :not(:last-child)) {
     $tw-space-y-reverse: 0;
-    margin-block-start: calc(calc(abstracts.$spacing) * 4) * $tw-space-y-reverse;
-    margin-block-end: calc(calc(abstracts.$spacing) * 4) *
-      calc(1 - $tw-space-y-reverse);
+    margin-block-start: calc(calc($spacing) * 4) * $tw-space-y-reverse;
+    margin-block-end: calc(calc($spacing) * 4) * calc(1 - $tw-space-y-reverse);
   }
 }
