@@ -2,17 +2,7 @@
 layout: base
 ---
 
-<header id="page-header">
-  <div class="container space-y-4">
-    <h1>{{ page.title }}</h1>
-    {% if page.description %}
-    <p>{{ page.description }}</p>
-    {% endif %}
-    <hr />
-  </div>
-</header>
+{% include page-header.html %}
 <main>
-  <div class="container">
-    <article class="article-content">{{content}}</article>
-  </div>
+  <article class="article-content">{{content}}</article>
 </main>

@@ -2,15 +2,19 @@
 
 #page-header {
   padding-top: calc($spacing) * 16;
+  padding-bottom: calc($spacing) * 8;
 
   h1 {
     font-size: $text-3xl;
     line-height: $leading, $text-3xl--line-height;
     font-weight: $font-weight-semibold;
+    margin-bottom: $spacing * 2;
   }
+
   p {
     font-size: $text-lg;
     line-height: $leading, $text-lg--line-height;
     color: var(--color-text);
+    font-weight: $font-weight-medium;
   }
 }
