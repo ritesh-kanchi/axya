@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const isOpen = menu.classList.toggle("is-open");
     overlay.classList.toggle("is-visible");
     toggle.setAttribute("aria-expanded", isOpen);
-    // Toggle your icons here
     if (isOpen) {
       openIcon.style.display = "none";
       closeIcon.style.display = "block";

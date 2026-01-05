@@ -5,15 +5,15 @@
   .mobile-header {
     position: fixed;
     top: 0;
-    left: 0; // Ensure it starts at the left edge
-    width: 100%; // Critical: without this, it shrinks to button size
-    background: white; // Prevents the overlay from showing through the bar
+    left: 0;
+    width: 100%;
+    background: var(--color-background);
     display: flex;
     justify-content: flex-end;
-    align-items: center; // Vertically center the button
+    align-items: center;
     padding: 0 $spacing * 4;
-    height: 3.5rem; // Increased slightly for breathing room
-    z-index: 1010; // Highest level
+    height: 3.5rem;
+    z-index: 1010;
     border-bottom: $border-width $border-style var(--color-border);
 
     @media (min-width: $breakpoint-md) {
@@ -36,8 +36,8 @@
     left: 0;
     width: 100%;
     padding: $spacing * 4;
-    background: white;
-    z-index: 1005; // Above overlay (999), below header (1010)
+    background: var(--color-background);
+    z-index: 1005;
 
     // Dropdown Transition
     display: none;
@@ -51,7 +51,7 @@
     overflow-y: auto;
 
     &.is-open {
-      display: block; // Or use transform: translateY() for animation
+      display: block;
     }
 
     .nav-content {
