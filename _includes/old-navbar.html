@@ -1,0 +1,17 @@
+{% if page.layout != "home" %}
+<nav role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <a id="site-title" href="/"> {{ site.title }} </a>
+    <ul>
+      {%- for path in include.paths -%} {%- assign hyperpage = site.pages |
+      where: "path", path | first -%} {%- if hyperpage.title %}
+      <li>
+        <a href="{{ hyperpage.url | relative_url }}"
+          >{{ hyperpage.title | escape }}</a
+        >
+      </li>
+      {% endif %} {% endfor %}
+    </ul>
+  </div>
+</nav>
+{% endif %} {%- include mobile-nav.html -%}
