@@ -11,24 +11,17 @@
     line-height: $leading-tight;
     font-weight: $font-weight-semibold;
     text-wrap: balance;
-    @media (min-width: $breakpoint-md) {
-      font-size: $text-3xl;
-      line-height: $leading, $text-3xl--line-height;
-    }
     margin-bottom: $spacing * 4;
   }
 
-  #affiliation {
+  .affiliation {
     font-size: $text-sm;
     line-height: $leading, $text-sm--line-height;
     color: var(--color-text);
-  }
-
-  #authors {
     margin-bottom: $spacing * 4;
   }
 
-  #affiliation {
+  .authors {
     margin-bottom: $spacing * 4;
   }
 }
