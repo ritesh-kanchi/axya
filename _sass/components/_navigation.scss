@@ -1,43 +1,158 @@
-@use "../abstracts/" as abstracts;
+@use "../abstracts/" as *;
 
-nav {
-  background-color: var(--color-background);
-  top: 0;
-  padding-inline: calc(abstracts.$spacing * 4);
-  padding: calc(abstracts.$spacing * 4) 0;
-  width: 100%;
-  z-index: 50;
-  border-bottom: 1px solid;
-  border-color: var(--color-border);
+#site-nav {
+  .mobile-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-background);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 $spacing * 4;
+    height: 3.5rem;
+    z-index: 1010;
+    border-bottom: $border-width $border-style var(--color-border);
 
-  @media (min-width: abstracts.$breakpoint-md) {
-    padding-inline: calc(abstracts.$spacing * 8);
+    @media (min-width: $breakpoint-md) {
+      display: none;
+    }
+
+    #nav-toggle {
+      width: 1.5rem;
+      height: 1.5rem;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+    }
   }
 
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  #nav-menu {
+    position: fixed;
+    top: 3.5rem;
+    left: 0;
+    width: 100%;
+    padding: $spacing * 4;
+    background: var(--color-background);
+    z-index: 1005;
 
-    ul {
-      align-items: center;
-      justify-content: flex-end;
-      gap: calc(abstracts.$spacing) * 8;
-      font-size: abstracts.$text-sm;
-      line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+    display: none;
+    border-bottom: $border-width $border-style var(--color-border);
+    max-height: calc(100vh - 3.5rem);
 
-      @media (min-width: abstracts.$breakpoint-md) {
-        display: flex;
+    @media (min-width: $breakpoint-sm) {
+      max-height: 100vh !important;
+    }
+
+    overflow-y: auto;
+
+    &.is-open {
+      display: block;
+    }
+
+    .nav-content {
+      @media (min-width: $breakpoint-md) {
+        padding-top: $spacing * 16 !important;
       }
 
-      li a {
+      padding-top: 0;
+
+      h2 {
+        font-size: $text-xs;
+        font-weight: $font-weight-semibold;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
         color: var(--color-text);
+        margin-bottom: calc($spacing * 4);
+        text-wrap: balance;
+      }
+
+      ul.pages-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li.nav-item {
+          margin-bottom: $spacing * 2;
+
+          &.active {
+            a {
+              font-weight: $font-weight-semibold;
+              color: var(--color-links);
+              background-color: var(--color-background-hover);
+            }
+          }
+
+          a {
+            display: block;
+            padding: calc($spacing * 2) calc($spacing * 3);
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: $text-sm;
+            line-height: 1.5;
+            border-radius: $radius-md;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+          }
+
+          &:hover a {
+            background-color: var(--color-background-hover);
+            color: var(--color-links);
+          }
+        }
       }
     }
   }
 
-  #site-title {
-    font-weight: abstracts.$font-weight-semibold;
-    color: var(--color-text);
+  #nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    display: none;
+    z-index: 999;
+
+    &.is-visible {
+      display: block;
+    }
+  }
+
+  @media (min-width: $breakpoint-md) {
+    width: 340px;
+    flex-shrink: 0;
+    border-right: none;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: $border-width;
+      height: 100%;
+      background-color: var(--color-border);
+    }
+  }
+
+  @media (min-width: $breakpoint-md) {
+    #nav-menu {
+      display: block !important;
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 340px;
+      overflow-y: auto;
+      padding-top: $spacing * 8;
+      max-height: 100vh;
+      border-bottom: none;
+      background: transparent;
+      z-index: 1;
+    }
+
+    #nav-overlay {
+      display: none !important;
+    }
   }
 }

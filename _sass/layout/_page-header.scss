@@ -1,24 +1,20 @@
-@use "../abstracts/" as abstracts;
+@use "../abstracts/" as *;
 
 #page-header {
-  padding-inline: calc(abstracts.$spacing) * 4;
-  padding-top: calc(abstracts.$spacing) * 16;
-  @media (min-width: abstracts.$breakpoint-md) {
-    padding-inline: calc(abstracts.$spacing) * 8;
-  }
-
-  .container {
-    @extend .space-y-4;
-  }
+  padding-top: calc($spacing) * 16;
+  padding-bottom: calc($spacing) * 8;
 
   h1 {
-    font-size: abstracts.$text-3xl;
-    line-height: abstracts.$leading, abstracts.$text-3xl--line-height;
-    font-weight: abstracts.$font-weight-semibold;
+    font-size: $text-3xl;
+    line-height: $leading, $text-3xl--line-height;
+    font-weight: $font-weight-semibold;
+    margin-bottom: $spacing * 2;
   }
+
   p {
-    font-size: abstracts.$text-lg;
-    line-height: abstracts.$leading, abstracts.$text-lg--line-height;
+    font-size: $text-lg;
+    line-height: $leading, $text-lg--line-height;
     color: var(--color-text);
+    font-weight: $font-weight-medium;
   }
 }

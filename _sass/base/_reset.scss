@@ -1,4 +1,4 @@
-@use "../abstracts/" as abstracts;
+@use "../abstracts/" as *;
 
 *,
 ::after,
@@ -13,10 +13,10 @@
 
 html,
 :host {
-  line-height: abstracts.$leading;
+  line-height: $leading;
   -webkit-text-size-adjust: 100%;
   tab-size: 4;
-  font-family: abstracts.$font-sans;
+  font-family: $font-sans;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -56,7 +56,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: abstracts.$font-mono;
+  font-family: $font-mono;
   font-size: 1em;
 }
 

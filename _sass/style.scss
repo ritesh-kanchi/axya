@@ -1,23 +1,20 @@
-@import "abstracts/variables";
+@use "abstracts/variables";
 
-@import "vendors/highlight";
+@use "vendors/highlight";
 
-@import "base/reset";
-@import "base/typography";
-@import "base/fonts";
-@import "base/base";
-@import "base/utilities";
+@use "base/reset";
+@use "base/typography";
+@use "base/fonts";
+@use "base/base";
+@use "base/utilities";
 
-@import "layout/article";
-@import "layout/home-header";
-@import "layout/home-page-grid";
-@import "layout/page-header";
-@import "layout/footer";
+@use "layout/article";
+@use "layout/home-header";
+@use "layout/page-header";
+@use "layout/footer";
+@use "layout/site";
 
-@import "pages/home";
-
-@import "components/buttons";
-@import "components/page-card";
-@import "components/pill";
-@import "components/mobile-nav";
-@import "components/navigation";
+@use "components/buttons";
+@use "components/page-card";
+@use "components/pill";
+@use "components/navigation";
