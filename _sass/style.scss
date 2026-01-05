@@ -10,11 +10,9 @@
 
 @use "layout/article";
 @use "layout/home-header";
-@use "layout/home-page-grid";
 @use "layout/page-header";
 @use "layout/footer";
-
-@use "pages/home";
+@use "layout/site";
 
 @use "components/buttons";
 @use "components/page-card";

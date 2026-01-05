@@ -1,0 +1,37 @@
+@use "../abstracts/" as *;
+
+.site-layout {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    align-items: stretch; // This ensures children take the full height of the parent
+  }
+}
+
+.content-wrapper {
+  flex: 1; // Grow to fill the remaining space
+  min-width: 0; // Essential: prevents the "no-wrap" layout break
+  width: 100%; // Ensures it takes full width on mobile
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // Helps push footer to bottom if content is short
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  padding: calc($spacing * 4);
+
+  @media (min-width: $breakpoint-md) {
+    padding: calc($spacing * 8);
+  }
+
+  // Ensure internal elements don't force a width break
+  * {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+}

@@ -1,7 +1,6 @@
 @use "../abstracts/" as *;
 
 #site-nav {
-  // --- MOBILE HEADER ---
   .mobile-header {
     position: fixed;
     top: 0;
@@ -32,14 +31,13 @@
 
   #nav-menu {
     position: fixed;
-    top: 3.5rem; // Must match header height
+    top: 3.5rem;
     left: 0;
     width: 100%;
     padding: $spacing * 4;
     background: var(--color-background);
     z-index: 1005;
 
-    // Dropdown Transition
     display: none;
     border-bottom: $border-width $border-style var(--color-border);
     max-height: calc(100vh - 3.5rem);
@@ -55,9 +53,11 @@
     }
 
     .nav-content {
-      @media (min-width: $breakpoint-sm) {
-        padding-top: $spacing * 16;
+      @media (min-width: $breakpoint-md) {
+        padding-top: $spacing * 16 !important;
       }
+
+      padding-top: 0;
 
       h2 {
         font-size: $text-xs;
@@ -75,7 +75,7 @@
         margin: 0;
 
         li.nav-item {
-          margin-bottom: 2px;
+          margin-bottom: $spacing * 2;
 
           &.active {
             a {
@@ -93,8 +93,6 @@
             font-size: $text-sm;
             line-height: 1.5;
             border-radius: $radius-md;
-            transition: all 0.2s ease;
-
             overflow-wrap: break-word;
             word-wrap: break-word;
           }
@@ -108,16 +106,33 @@
     }
   }
 
-  // --- THE OVERLAY ---
   #nav-overlay {
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.25);
     display: none;
-    z-index: 999; // Below the menu and header
+    z-index: 999;
 
     &.is-visible {
       display: block;
+    }
+  }
+
+  @media (min-width: $breakpoint-md) {
+    width: 340px;
+    flex-shrink: 0;
+    border-right: none;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: $border-width;
+      height: 100%;
+      background-color: var(--color-border);
     }
   }
 
@@ -129,33 +144,16 @@
       top: 0;
       left: 0;
       width: 340px;
+      overflow-y: auto;
       padding-top: $spacing * 8;
-      height: 100vh;
-      border-right: $border-width $border-style var(--color-border);
+      max-height: 100vh;
       border-bottom: none;
       background: transparent;
-      z-index: 1; // Lower on desktop so it doesn't interfere with other UI
+      z-index: 1;
     }
 
     #nav-overlay {
       display: none !important;
     }
-  }
-}
-
-// Ensure the layout uses Flex to put the Nav next to Content
-.site-layout {
-  @media (min-width: $breakpoint-md) {
-    display: flex;
-  }
-}
-
-.main-content {
-  flex: 1;
-  min-width: 0;
-  padding: calc($spacing * 4);
-
-  @media (min-width: $breakpoint-md) {
-    padding: calc($spacing * 8) !important;
   }
 }

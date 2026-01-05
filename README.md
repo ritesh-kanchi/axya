@@ -70,7 +70,7 @@ gem build axya.gemspec
 Install it:
 
 ```bash
-gem install ./axya-0.0.1.gem
+gem install ./axya-0.0.2.gem
 ```
 
 Then in your site’s `Gemfile`:
