@@ -49,6 +49,7 @@
       object-fit: cover;
       object-position: center;
       display: inline-block;
+      border: $border-style $border-width var(--color-border);
     }
   }
 }
