@@ -23,6 +23,27 @@
 
   .authors {
     margin-bottom: $spacing * 4;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing;
+
+    .author {
+      display: flex;
+      align-items: center;
+      gap: $spacing;
+    }
+
+    .author-img {
+      width: 6 * $spacing;
+      height: 6 * $spacing;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      display: inline-block;
+      margin-right: $spacing;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 
