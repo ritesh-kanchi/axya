@@ -25,12 +25,18 @@
     margin-bottom: $spacing * 4;
     display: flex;
     flex-wrap: wrap;
-    gap: $spacing;
+    gap: $spacing 0;
+
+    .author:first-child,
+    .author:last-child {
+      margin-left: 0;
+    }
 
     .author {
       display: flex;
       align-items: center;
       gap: $spacing;
+      margin-left: $spacing;
     }
 
     .author-img {
