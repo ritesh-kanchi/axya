@@ -32,7 +32,7 @@
         {%- elsif forloop.last -%}
           {%- if forloop.length > 1 -%}
             &nbsp;&amp;&nbsp;
-          {% endif -%}
+          {%- endif -%}
           {%-
             include author.html
             author=author
@@ -49,23 +49,25 @@
       {%- endfor -%}
     </p>
   {% endif %}
-  <ul class="affiliations">
-    {%- for affiliation in site.affiliations -%}
-      <li>
-        <a href="{{ affiliation.url }}" target="_blank" class="link">
-          {% if affiliation.department -%}
-            {{- affiliation.department -}}
-          {%- elsif affiliation.name -%}
-            {{- affiliation.name -}}
-          {%- endif -%}
-        </a>
-        {%- if affiliation.department and affiliation.name -%}, {{ affiliation.name }}{%- endif -%}
-        {%- if forloop.length > 1 -%}
-          <sup>{{ forloop.index }}</sup>
-        {% endif %}
-      </li>
-    {%- endfor -%}
-  </ul>
+  {% if site.affiliations and site.affiliations.size > 0 %}
+    <ul class="affiliations">
+      {%- for affiliation in site.affiliations -%}
+        <li>
+          <a href="{{ affiliation.url }}" target="_blank" class="link">
+            {% if affiliation.department -%}
+              {{- affiliation.department -}}
+            {%- elsif affiliation.name -%}
+              {{- affiliation.name -}}
+            {%- endif -%}
+          </a>
+          {%- if affiliation.department and affiliation.name -%}, {{ affiliation.name }}{%- endif -%}
+          {%- if forloop.length > 1 -%}
+            <sup>{{ forloop.index }}</sup>
+          {% endif %}
+        </li>
+      {%- endfor -%}
+    </ul>
+  {% endif %}
   <ul class="header-button-group">
     {%- for link in site.content.links -%}
       <li>

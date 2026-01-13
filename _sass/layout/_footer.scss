@@ -17,7 +17,7 @@ footer {
     padding: $spacing * 8;
     flex-direction: row;
     justify-content: space-between;
-    align-items: start;
+    align-items: flex-start;
     border-image: linear-gradient(
         to right,
         var(--color-border),
