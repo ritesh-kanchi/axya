@@ -126,6 +126,18 @@ content:
 
 Add as many authors or links as needed.
 
+### Front Matter Configuration
+
+```yaml
+---
+layout: page
+title: Page Title
+description: A brief description of the page. # (optional)
+hide: true # Whether to hide the page from navigation. (optional)
+order: 1 # Order of the page in navigation. (optional, lower is higher priority)
+---
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at [https://github.com/ritesh-kanchi/axya](https://github.com/ritesh-kanchi/axya). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
