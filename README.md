@@ -112,13 +112,15 @@ content:
   affiliation:
     name: University Name
     department: Department Name
-    url: https://example.com
+    url: https://example.com # (optional)
   type: Paper
   authors:
     - name: First Author
-      url: https://example.com
+      url: https://example.com # (optional)
+      img: /path/to/author-image.jpg # (optional)
     - name: Second Author
-      url: https://example.com
+      url: https://example.com # (optional)
+      img: /path/to/author-image.jpg # (optional)
   links:
     - label: Paper Link
       url: https://doi.org/10.1145/XXXXXXX.XXXXXXX
@@ -147,6 +149,9 @@ I appreciate any feedback or suggestions for improvements!
 ## License
 
 This theme is open source under the MIT License.
+
+## AI Positionality
+This repository makes use of GitHub Copilot in reviewing contributions to PRs. Changes made directly by GitHub Copilot are not made without direct intervention, and are for simple changes (i.e., README formatting) over full code and feature merges.
 
 ## Where does Axya come from?
 

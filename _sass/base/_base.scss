@@ -17,8 +17,7 @@ hr {
 
 main section {
   :where(& > :not(:last-child)) {
-    $tw-space-y-reverse: 0;
-    margin-block-start: calc(calc($spacing) * 4) * $tw-space-y-reverse;
-    margin-block-end: calc(calc($spacing) * 4) * calc(1 - $tw-space-y-reverse);
+    margin-block-start: 0;
+    margin-block-end: $spacing * 4;
   }
 }

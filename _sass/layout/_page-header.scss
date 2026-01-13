@@ -1,8 +1,8 @@
 @use "../abstracts/" as *;
 
 #page-header {
-  padding-top: calc($spacing) * 16;
-  padding-bottom: calc($spacing) * 8;
+  padding-top: $spacing * 16;
+  padding-bottom: $spacing * 8;
 
   h1 {
     font-size: $text-3xl;
