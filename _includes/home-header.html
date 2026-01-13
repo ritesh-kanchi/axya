@@ -12,12 +12,12 @@
   </ul>
   <h1>{{ site.title }}</h1>
 
-  {%- assign affiliation_map = '' | split: '' -%}
+  {%- assign affiliation_pairs = '' | split: '' -%}
   {%- for affiliation in site.affiliations -%}
     {%- assign key = affiliation.id | append: '' -%}
     {%- assign value = forloop.index -%}
     {%- assign pair = key | append: '::' | append: value -%}
-    {%- assign affiliation_map = affiliation_map | push: pair -%}
+    {%- assign affiliation_pairs = affiliation_pairs | push: pair -%}
   {%- endfor -%}
 
   {% if site.content.authors %}
@@ -27,7 +27,7 @@
           {%-
             include author.html
             author=author
-            map=affiliation_map
+            pairs=affiliation_pairs
           -%}
         {%- elsif forloop.last -%}
           {%- if forloop.length > 1 -%}
@@ -36,14 +36,14 @@
           {%-
             include author.html
             author=author
-            map=affiliation_map
+            pairs=affiliation_pairs
           -%}
         {%- else -%}
           ,
           {%-
             include author.html
             author=author
-            map=affiliation_map
+            pairs=affiliation_pairs
           -%}
         {%- endif -%}
       {%- endfor -%}
@@ -59,8 +59,7 @@
             {{- affiliation.name -}}
           {%- endif -%}
         </a>
-        {{- %- if affiliation.department and affiliation.name -% }}, {{ affiliation.name -}}
-        {{- % endif % }}
+        {%- if affiliation.department and affiliation.name -%}, {{ affiliation.name }}{%- endif -%}
         {%- if forloop.length > 1 -%}
           <sup>{{ forloop.index }}</sup>
         {% endif %}
