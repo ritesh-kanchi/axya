@@ -112,13 +112,15 @@ content:
   affiliation:
     name: University Name
     department: Department Name
-    url: https://example.com
+    url: https://example.com # (optional)
   type: Paper
   authors:
     - name: First Author
-      url: https://example.com
+      url: https://example.com # (optional)
+      img: /path/to/author-image.jpg # (optional)
     - name: Second Author
-      url: https://example.com
+      url: https://example.com # (optional)
+      img: /path/to/author-image.jpg # (optional)
   links:
     - label: Paper Link
       url: https://doi.org/10.1145/XXXXXXX.XXXXXXX
