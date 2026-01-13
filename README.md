@@ -134,6 +134,7 @@ layout: page (home, base)
 title: Page Title
 description: A brief description of the page. (optional)
 hide: Whether to hide the page from navigation. (optional)
+order: Order of the page in navigation. (optional, lower is higher priority)
 ---
 ```
 

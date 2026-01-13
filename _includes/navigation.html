@@ -27,12 +27,13 @@
           <a href="{{ '/' | relative_url }}"> Home </a>
         </li>
         {%- assign pages_list = site.pages | where_exp: "p", "p.layout == 'page'
-        or p.data.layout == 'page'" -%} {% for p in pages_list %} {% if p.url !=
-        '/' and p.hide != true %}
+        or p.data.layout == 'page'" | where_exp: "p", "p.url != '/'" |
+        where_exp: "p", "p.hide != true" | sort: "order" -%} {% for p in
+        pages_list %}
         <li class="nav-item{% if page.url == p.url %} active{% endif %}">
           <a href="{{ p.url | relative_url }}"> {{ p.title | escape }} </a>
         </li>
-        {% endif %} {% endfor %}
+        {% endfor %}
       </ul>
     </div>
   </div>
