@@ -13,15 +13,11 @@ footer {
   color: var(--color-text);
 
   @media (min-width: $breakpoint-md) {
-<<<<<<< HEAD
     text-align: left;
     padding: calc($spacing) * 8;
     flex-direction: row;
     justify-content: space-between;
     align-items: start;
-=======
-    padding: $spacing * 8;
->>>>>>> origin/main
     border-image: linear-gradient(
         to right,
         var(--color-border),

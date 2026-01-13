@@ -1,0 +1,29 @@
+{%- assign ids = include.ids | default: '' -%}
+{%- assign map = include.map | default: '' -%}
+
+{%- if map and map != '' and map.size > 1 -%}
+  {%- if ids and ids != '' -%}
+    {%- assign result = '' -%}
+    {%- assign first_found = true -%}
+    {%- for id in ids -%}
+      {%- assign id_str = id | append: '' -%}
+      {%- for pair in map -%}
+        {%- assign parts = pair | split: '::' -%}
+        {%- assign p_id = parts[0] -%}
+        {%- assign p_index = parts[1] -%}
+        {%- if p_id == id_str -%}
+          {%- if first_found -%}
+            {%- assign result = p_index -%}
+            {%- assign first_found = false -%}
+          {%- else -%}
+            {%- assign result = result | append: ',' | append: p_index -%}
+          {%- endif -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endfor -%}
+    {%- if result != '' -%}
+      <sup>{{ result }}</sup>
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}

@@ -19,37 +19,32 @@
     {%- assign pair = key | append: '::' | append: value -%}
     {%- assign affiliation_map = affiliation_map | push: pair -%}
   {%- endfor -%}
+
   {% if site.content.authors %}
     <p class="authors">
       {%- for author in site.content.authors -%}
         {%- if forloop.first -%}
-          <a href="{{ author.url }}" target="_blank" class="link">
-            {{ author.name | escape -}}
-            {%-
-              include author-affiliations-sup.html
-              ids=author.affiliations map=affiliation_map
-            -%}
-          </a>
+          {%-
+            include author.html
+            author=author
+            map=affiliation_map
+          -%}
         {%- elsif forloop.last -%}
           {%- if forloop.length > 1 -%}
-            &nbsp;&amp;
+            &nbsp;&amp;&nbsp;
           {% endif -%}
-          <a href="{{ author.url }}" target="_blank" class="link">
-            {{ author.name | escape -}}
-            {%-
-              include author-affiliations-sup.html
-              ids=author.affiliations map=affiliation_map
-            -%}
-          </a>
+          {%-
+            include author.html
+            author=author
+            map=affiliation_map
+          -%}
         {%- else -%}
           ,
-          <a href="{{ author.url }}" target="_blank" class="link">
-            {{ author.name | escape -}}
-            {%-
-              include author-affiliations-sup.html
-              ids=author.affiliations map=affiliation_map
-            -%}
-          </a>
+          {%-
+            include author.html
+            author=author
+            map=affiliation_map
+          -%}
         {%- endif -%}
       {%- endfor -%}
     </p>
