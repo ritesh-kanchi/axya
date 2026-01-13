@@ -14,11 +14,14 @@
     margin-bottom: $spacing * 4;
   }
 
-  .affiliation {
+  ul.affiliations {
     font-size: $text-sm;
     line-height: $leading, $text-sm--line-height;
     color: var(--color-text);
     margin-bottom: $spacing * 4;
+    li {
+      margin-bottom: $spacing * 2;
+    }
   }
 
   .authors {
