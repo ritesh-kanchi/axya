@@ -148,6 +148,11 @@ I appreciate any feedback or suggestions for improvements!
 
 This theme is open source under the MIT License.
 
+# Miscellaneous
+
+## AI Positionality
+This repository makes use of GitHub Copilot in reviewing contributions to PRs. Changes made directly by GitHub Copilot are not made without direct intervention, and are for simple changes (i.e., README formatting) over full code and feature merges.
+
 ## Where does Axya come from?
 
 A riff on "A11y" (if you can imagine the "x" being two crossed 1's.)
