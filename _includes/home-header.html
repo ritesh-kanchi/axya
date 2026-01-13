@@ -1,6 +1,6 @@
 <header id="home-header">
   <ul class="header-pill-group">
-    {% if site.conference.name or site.conference.year %}
+    {% if site.conference.name and site.conference.year %}
       <li class="header-pill">
         {{ site.conference.name }}
         {{ site.conference.year }}
