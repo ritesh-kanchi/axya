@@ -4,11 +4,11 @@ footer {
   background: var(--color-background);
   border-top: 1px solid var(--color-border);
 
-  padding: calc($spacing) * 4;
+  padding: $spacing * 4;
   color: var(--color-text);
 
   @media (min-width: $breakpoint-md) {
-    padding: calc($spacing) * 8;
+    padding: $spacing * 8;
     border-image: linear-gradient(
         to right,
         var(--color-border),
