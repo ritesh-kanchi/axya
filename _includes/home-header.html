@@ -1,43 +1,72 @@
 <header id="home-header">
   <ul class="header-pill-group">
+    {% if site.content.type %}
+      <li class="header-pill">{{ site.content.type }}</li>
+    {% endif %}
     {% if site.conference.name and site.conference.year %}
       <li class="header-pill">
         {{ site.conference.name }}
         {{ site.conference.year }}
       </li>
     {% endif %}
-    {% if site.content.type %}
-      <li class="header-pill">{{ site.content.type }}</li>
-    {% endif %}
   </ul>
   <h1>{{ site.title }}</h1>
+
+  {%- assign affiliation_pairs = '' | split: '' -%}
+  {%- for affiliation in site.affiliations -%}
+    {%- assign key = affiliation.id | append: '' -%}
+    {%- assign value = forloop.index -%}
+    {%- assign pair = key | append: '::' | append: value -%}
+    {%- assign affiliation_pairs = affiliation_pairs | push: pair -%}
+  {%- endfor -%}
+
   {% if site.content.authors %}
     <p class="authors">
       {%- for author in site.content.authors -%}
         {%- if forloop.first -%}
-          {% include author.html author=author %}
+          {%-
+            include author.html
+            author=author
+            pairs=affiliation_pairs
+          -%}
         {%- elsif forloop.last -%}
           {%- if forloop.length > 1 -%}
             &nbsp;&amp;&nbsp;
           {%- endif -%}
-          {%
+          {%-
             include author.html
             author=author
-          %}
-        {%- elsif forloop.last -%}
+            pairs=affiliation_pairs
+          -%}
         {%- else -%}
-          , {% include author.html author=author %}
-        {%- elsif forloop.last -%}
+          ,
+          {%-
+            include author.html
+            author=author
+            pairs=affiliation_pairs
+          -%}
         {%- endif -%}
-      {% endfor -%}
+      {%- endfor -%}
     </p>
   {% endif %}
-  {% if site.content.affiliation %}
-    <p class="affiliation">
-      <a href="{{ site.content.affiliation.url }}" target="_blank" class="link">
-        {{- site.content.affiliation.department -}}</a
-      >, {{ site.content.affiliation.name }}
-    </p>
+  {% if site.affiliations and site.affiliations.size > 0 %}
+    <ul class="affiliations">
+      {%- for affiliation in site.affiliations -%}
+        <li>
+          <a href="{{ affiliation.url }}" target="_blank" class="link">
+            {% if affiliation.department -%}
+              {{- affiliation.department -}}
+            {%- elsif affiliation.name -%}
+              {{- affiliation.name -}}
+            {%- endif -%}
+          </a>
+          {%- if affiliation.department and affiliation.name -%}, {{ affiliation.name }}{%- endif -%}
+          {%- if forloop.length > 1 -%}
+            <sup>{{ forloop.index }}</sup>
+          {% endif %}
+        </li>
+      {%- endfor -%}
+    </ul>
   {% endif %}
   <ul class="header-button-group">
     {%- for link in site.content.links -%}

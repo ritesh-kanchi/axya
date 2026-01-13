@@ -7,8 +7,20 @@
     >
   {%- endif -%}
   {%- if author.url -%}
-    <a href="{{ author.url }}" target="_blank" class="link">{{ author.name | escape }}</a>
+    <a href="{{ author.url }}" target="_blank" class="link">
+      {{- author.name | escape }}
+      {%-
+        include author-affiliations.html
+        ids=author.affiliations
+        pairs=include.pairs
+      -%}
+    </a>
   {%- else -%}
     {{ author.name | escape }}
+    {%-
+      include author-affiliations.html
+      ids=author.affiliations
+      pairs=include.pairs
+    -%}
   {%- endif -%}
 </span>
