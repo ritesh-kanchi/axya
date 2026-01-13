@@ -151,7 +151,3 @@ This theme is open source under the MIT License.
 ## Where does Axya come from?
 
 A riff on "A11y" (if you can imagine the "x" being two crossed 1's.)
-
-```
-
-```
