@@ -1,8 +1,8 @@
 @use "../abstracts/" as *;
 
 #home-header {
-  padding-top: calc($spacing) * 16;
-  padding-bottom: calc($spacing) * 8;
+  padding-top: $spacing * 16;
+  padding-bottom: $spacing * 8;
 
   h1 {
     max-width: $container-5xl;
@@ -31,7 +31,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  gap: calc($spacing) * 2;
+  gap: $spacing * 2;
   margin-bottom: $spacing * 4;
 }
 
@@ -40,5 +40,5 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  gap: calc($spacing) * 4;
+  gap: $spacing * 4;
 }

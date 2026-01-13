@@ -4,14 +4,14 @@
   position: relative;
   display: block;
   :where(& > :not(:last-child)) {
-    margin-block-start: calc(calc($spacing) * 2) * $space-y-reverse;
-    margin-block-end: calc(calc($spacing) * 2) * calc(1 - $space-y-reverse);
+    margin-block-start: 0;
+    margin-block-end: $spacing * 2;
   }
   border-radius: $radius-lg;
   border-style: $border-style;
   border-width: $border-width;
   border-color: var(--color-border);
-  padding: calc($spacing) * 4;
+  padding: $spacing * 4;
   transition-property: color, background-color, border-color, outline-color,
     text-decoration-color, fill, stroke, opacity, box-shadow, transform,
     translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter,
@@ -46,10 +46,10 @@
   .arrow-icon {
     pointer-events: none;
     position: absolute;
-    top: calc($spacing) * 2;
-    right: calc($spacing) * 2;
-    width: calc($spacing) * 5;
-    height: calc($spacing) * 5;
+    top: $spacing * 2;
+    right: $spacing * 2;
+    width: $spacing * 5;
+    height: $spacing * 5;
     color: $color-zinc-500;
     -webkit-user-select: none;
     user-select: none;
