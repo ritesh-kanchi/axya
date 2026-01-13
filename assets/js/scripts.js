@@ -1,43 +1,56 @@
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("nav-toggle");
-  const mobileMenu = document.getElementById("mobile-menu");
-  const openIcon = document.getElementById("nav-open-icon");
-  const closeIcon = document.getElementById("nav-close-icon");
+  const menu = document.getElementById("nav-menu");
+  const overlay = document.getElementById("nav-overlay");
+  const openIcon = document.getElementById("open-icon");
+  const closeIcon = document.getElementById("close-icon");
+  const mobileHeader = document.querySelector(".mobile-header");
 
-  if (!toggle || !mobileMenu) return;
+  if (!toggle || !menu || !overlay) return;
 
   function openMenu() {
-    mobileMenu.style.display = "flex";
+    menu.classList.add("is-open");
+    overlay.classList.add("is-visible");
     toggle.setAttribute("aria-expanded", "true");
-    toggle.setAttribute("aria-label", "Close Menu");
+
     if (openIcon) openIcon.style.display = "none";
     if (closeIcon) closeIcon.style.display = "block";
-    document.documentElement.style.overflow = "hidden";
+    if (mobileHeader) mobileHeader.style.borderBottom = "none";
+
+    document.body.style.overflow = "hidden";
   }
 
   function closeMenu() {
-    mobileMenu.style.display = "none";
+    menu.classList.remove("is-open");
+    overlay.classList.remove("is-visible");
     toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", "Open Menu");
+
     if (openIcon) openIcon.style.display = "block";
     if (closeIcon) closeIcon.style.display = "none";
-    document.documentElement.style.overflow = "";
+    if (mobileHeader) mobileHeader.style.borderBottom = "";
+
+    document.body.style.overflow = "";
   }
 
-  toggle.addEventListener("click", function () {
-    const expanded = toggle.getAttribute("aria-expanded") === "true";
-    if (expanded) closeMenu();
-    else openMenu();
-  });
+  function toggleMenu() {
+    const isCurrentlyOpen = menu.classList.contains("is-open");
+    if (isCurrentlyOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
 
-  mobileMenu.addEventListener("click", function (e) {
-    const link = e.target.closest("a");
-    if (!link) return;
-
-    closeMenu();
-  });
+  toggle.addEventListener("click", toggleMenu);
+  overlay.addEventListener("click", closeMenu);
 
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") closeMenu();
+  });
+
+  window.addEventListener("resize", function () {
+    if (window.innerWidth >= 768) {
+      closeMenu();
+    }
   });
 });

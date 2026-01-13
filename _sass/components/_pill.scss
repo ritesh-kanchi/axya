@@ -1,16 +1,16 @@
-@use "../abstracts/" as abstracts;
+@use "../abstracts/" as *;
 
 .header-pill {
   display: inline-block;
   border-radius: calc(infinity * 1px);
-  border-style: abstracts.$border-style;
-  border-width: abstracts.$border-width;
+  border-style: $border-style;
+  border-width: $border-width;
   border-color: var(--color-border);
   background-color: var(--color-background);
-  padding-inline: calc(abstracts.$spacing) * 3;
-  padding-block: calc(abstracts.$spacing) * 1;
-  font-size: abstracts.$text-sm;
-  line-height: abstracts.$leading, abstracts.$text-sm--line-height;
-  font-weight: abstracts.$font-weight-medium;
+  padding-inline: calc($spacing) * 3;
+  padding-block: calc($spacing) * 1;
+  font-size: $text-sm;
+  line-height: $leading, $text-sm--line-height;
+  font-weight: $font-weight-medium;
   color: var(--color-headings);
 }

@@ -1,37 +1,28 @@
-@use "../abstracts/" as abstracts;
+@use "../abstracts/" as *;
 
 #home-header {
-  border-bottom-style: abstracts.$border-style;
-  border-bottom-width: 1px;
-  border-color: var(--color-border);
-  padding-inline: calc(abstracts.$spacing) * 4;
-  padding-top: calc(abstracts.$spacing) * 16;
-  padding-bottom: calc(abstracts.$spacing) * 8;
-  @media (min-width: abstracts.$breakpoint-md) {
-    padding-inline: calc(abstracts.$spacing) * 8;
-  }
+  padding-top: calc($spacing) * 16;
+  padding-bottom: calc($spacing) * 8;
 
   h1 {
-    max-width: abstracts.$container-5xl;
-    font-size: abstracts.$text-3xl;
-    line-height: abstracts.$leading, abstracts.$text-3xl--line-height;
-    line-height: abstracts.$leading-tight;
-    font-weight: abstracts.$font-weight-semibold;
+    max-width: $container-5xl;
+    font-size: $text-3xl;
+    line-height: $leading, $text-3xl--line-height;
+    line-height: $leading-tight;
+    font-weight: $font-weight-semibold;
     text-wrap: balance;
-    @media (min-width: abstracts.$breakpoint-md) {
-      font-size: abstracts.$text-3xl;
-      line-height: abstracts.$leading, abstracts.$text-3xl--line-height;
-    }
+    margin-bottom: $spacing * 4;
   }
 
-  .container {
-    @extend .space-y-4;
-  }
-
-  #affiliation {
-    font-size: abstracts.$text-sm;
-    line-height: abstracts.$leading, abstracts.$text-sm--line-height;
+  .affiliation {
+    font-size: $text-sm;
+    line-height: $leading, $text-sm--line-height;
     color: var(--color-text);
+    margin-bottom: $spacing * 4;
+  }
+
+  .authors {
+    margin-bottom: $spacing * 4;
   }
 }
 
@@ -40,7 +31,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  gap: calc(abstracts.$spacing) * 2;
+  gap: calc($spacing) * 2;
+  margin-bottom: $spacing * 4;
 }
 
 .header-button-group {
@@ -48,5 +40,5 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
-  gap: calc(abstracts.$spacing) * 4;
+  gap: calc($spacing) * 4;
 }

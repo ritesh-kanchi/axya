@@ -1,4 +1,4 @@
-@use "../abstracts/" as abstracts;
+@use "../abstracts/" as *;
 
 h1,
 h2,
@@ -6,29 +6,29 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: abstracts.$font-display;
+  font-family: $font-display;
   color: var(--color-headings);
 }
 
 html,
 body {
   color: var(--color-text);
-  font-family: abstracts.$font-text;
+  font-family: $font-text;
 }
 
 section h2 {
-  font-size: abstracts.$text-2xl;
-  line-height: abstracts.$leading, abstracts.$text-2xl--line-height;
-  font-weight: abstracts.$font-weight-semibold;
+  font-size: $text-2xl;
+  line-height: $leading, $text-2xl--line-height;
+  font-weight: $font-weight-semibold;
 }
 
 b,
 strong {
-  font-weight: abstracts.$font-weight-semibold;
+  font-weight: $font-weight-semibold;
 }
 
 .link {
-  font-weight: abstracts.$font-weight-medium;
+  font-weight: $font-weight-medium;
   color: var(--color-links);
   text-decoration-line: underline;
 }

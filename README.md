@@ -70,7 +70,7 @@ gem build axya.gemspec
 Install it:
 
 ```bash
-gem install ./axya-0.0.1.gem
+gem install ./axya-0.0.2.gem
 ```
 
 Then in your site’s `Gemfile`:
@@ -125,6 +125,18 @@ content:
 ```
 
 Add as many authors or links as needed.
+
+### Front Matter Configuration
+
+```yaml
+---
+layout: page
+title: Page Title
+description: A brief description of the page. # (optional)
+hide: true # Whether to hide the page from navigation. (optional)
+order: 1 # Order of the page in navigation. (optional, lower is higher priority)
+---
+```
 
 ## Contributing
 
