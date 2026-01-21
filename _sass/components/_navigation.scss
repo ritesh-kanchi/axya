@@ -74,6 +74,12 @@
         padding: 0;
         margin: 0;
 
+        hr {
+          margin: $spacing * 4 0;
+          border: none;
+          border-top: $border-width $border-style var(--color-border);
+        }
+
         li.nav-item {
           margin-bottom: $spacing * 2;
 
@@ -100,6 +106,17 @@
           &:hover a {
             background-color: var(--color-background-hover);
             color: var(--color-links);
+          }
+        }
+
+        li.nav-item.link {
+          font-weight: $font-weight-normal;
+          text-decoration: none;
+          a::after {
+            content: "↗";
+            margin-left: $spacing;
+            font-size: $text-xs;
+            float: right;
           }
         }
       }
