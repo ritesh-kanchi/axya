@@ -39,6 +39,7 @@
         <li class="nav-item link">
           <a href="{{ link.url  }}" target="_blank" rel="noopener">
             {{ link.label | escape }}
+            <span class="sr-only"> (opens in a new tab)</span>
           </a>
         </li>
         {% endfor %} {% endif %}
