@@ -15,7 +15,7 @@
         <div class="logo">
           <img
             src="{{ site.content.logo.img }}"
-            alt="{{ site.title | escape }} Logo"
+            alt="{% if site.content.logo.alt %}{{ site.content.logo.alt | escape }}{% else %}{{ site.title | escape }} Logo{% endif %}"
           >
         </div>
       </a>
@@ -23,7 +23,7 @@
       <div class="logo">
         <img
           src="{{ site.content.logo.img }}"
-          alt="{{ site.title | escape }} Logo"
+          alt="{% if site.content.logo.alt %}{{ site.content.logo.alt | escape }}{% else %}{{ site.title | escape }} Logo{% endif %}"
         >
       </div>
     {% endif %}
