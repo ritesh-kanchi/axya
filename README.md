@@ -14,8 +14,11 @@ Axya is a Jekyll theme that helps researchers quickly publish accessible, clean,
 - Minimal cognitive load
 - Solid mobile navigation experience
 
-Live Example:
-[Systems for Scaling Accessibility Efforts in Large Computing Courses](https://g.riteshkanchi.com/sigcse26-systems-for-scaling-accessibility/)
+**Axya in the wild:**
+- [Systems for Scaling Accessibility Efforts in Large Computing Courses](https://g.riteshkanchi.com/sigcse26-systems-for-scaling-accessibility/)
+- [Nonvisual Support for Understanding and Reasoning about Data Structures](https://g.riteshkanchi.com/chi26-arboretum/)
+- [Harvard HCI Reading Group](https://iisharvard.github.io/hci-reading-group/)
+- [Web Impact UW](https://md.rtsh.space)
 
 ## Features
 
