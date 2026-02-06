@@ -24,6 +24,8 @@ content:
     - label: Paper Link
       url: https://doi.org/10.1145/XXXXXXX.XXXXXXX
 
+github: https://github.com/ritesh-kanchi/axya
+
 permalink: pretty
 
 plugins:
