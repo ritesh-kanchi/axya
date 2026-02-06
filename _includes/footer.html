@@ -3,6 +3,9 @@
     <p>
       &copy; {{ site.content.footer }}
       {{ 'now' | date: '%Y' }}.
+      {% if site.github %}
+        <a href="{{ site.github }}" target="_blank">View on GitHub</a>
+      {% endif %}
     </p>
     <small>
       This site uses
